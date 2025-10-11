@@ -28,7 +28,10 @@ export function Control() {
                 //router.refresh(); // 있으면 결과가 표시되지 않음
             });
     };
-
+// input field에서 아래를 삭제
+// [box-shadow:inset_0_0_0_1000px_#fff] dark:[box-shadow:inset_0_0_0_1000px_rgba(31,41,55,0.95)] [-webkit-text-fill-color:inherit]
+// 아래는 추가
+// bg-white dark:bg-gray-800
     return(
         <div className="flex flex-col items-center gap-4 w-full">
             {/* 스타일이 개선된 검색 폼 */}
@@ -39,7 +42,7 @@ export function Control() {
                     placeholder="건강 노후 경제 인생 관계"
                     value={category}
                     onChange={e => setCategory(e.target.value)}
-                    className="peer w-full h-full bg-transparent pl-5 pr-2 py-2 text-gray-700 dark:text-gray-200 placeholder-gray-400 focus:outline-none [box-shadow:inset_0_0_0_1000px_#fff] dark:[box-shadow:inset_0_0_0_1000px_#1f2937]"
+                    className="peer w-full h-full bg-transparent pl-5 pr-2 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-yellow-300 placeholder-blue-500 dark:placeholder-gray-400 focus:outline-none "
                 />
                 <button type="submit" className="flex-shrink-0 p-2 mr-2 rounded-full text-gray-500 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 z-10">
                     {/* 돋보기 아이콘 SVG */}
