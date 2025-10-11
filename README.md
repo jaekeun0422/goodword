@@ -1,0 +1,2 @@
+# goodword
+NextJS and SpringBoot
