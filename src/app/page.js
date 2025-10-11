@@ -16,7 +16,7 @@ export default async function Home() {
       <main className="flex flex-col gap-[32px] row-start-2 items-center">
         <Image
           className="dark:invert"
-          src="/goodword.svg"
+          src="/morning.svg"
           alt="goodword logo"
           width={350}
           height={50}
