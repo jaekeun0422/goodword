@@ -6,6 +6,30 @@ export default async function Read({params}) {
     let topic = null;
     if (resp.ok) {
         topic = await resp.json(); // 데이터가 있을 때
+        // hit수 1증가
+        topic.hit++;
+        // hit 숫자를 DB에 update
+        console.log(`id = {topic.id}, hit = {topic.hit}`);
+        const options = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(topic)}
+        try {
+            const resp = await fetch(process.env.NEXT_PUBLIC_API_URL + `goodword/update`, options);
+            if (resp.ok) {
+                console.log("Post updated successfully!");
+            } else {
+                console.error("Failed to update post by fetch()");
+                //alert("수정(hit)에 실패했습니다 by fetch()");
+            }
+        }
+        catch (error) {
+            console.error("An error occurred at catch(error)", error);
+            //alert("오류가 발생했습니다. 다시 시도해주세요 by catch(error)");
+        }
+
     } else {
         // 에러 처리: 데이터가 없을 때
         return (
