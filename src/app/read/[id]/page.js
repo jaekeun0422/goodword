@@ -39,20 +39,43 @@ export default async function Read({params}) {
         );
     }
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen">
-            <div className="text-center p-8 border shadow-lg rounded-lg">
-                <h4 className="text-xl font-semibold mb-2">{topic.category}</h4>
-                <div className="flex justify-center space-x-4 text-gray-600 mb-4">
-                    <p>{topic.subject}</p>
-                    <p>조회수: {topic.hit}</p>
+        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
+                <form className="w-full max-w-2xl bg-white p-8 border border-gray-200 shadow-lg rounded-xl">
+                    <div className="mb-4">
+                        <input
+                            type="text"
+                            name="category"
+                            value={topic.category} readOnly
+                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 text-gray-800"
+                        />
+                    </div>
+                    <div className="mb-4">
+                        <input
+                            type="text"
+                            name="subject"
+                            value={topic.subject} readOnly
+                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 text-gray-800"
+                        />
+                    </div>
+
+                    <div className="mb-6">
+                        <textarea
+                            name="content"
+                            value={topic.content} readOnly
+                            rows="10"
+                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 text-gray-800"
+                        ></textarea>
+                    </div>
+                </form>
+
+                <div className="flex flex-row gap-4 items-center justify-center mt-8">
+                    <Link href={`/delete/${topic.id}`} className="bg-blue-400 text-white font-semibold px-5 py-2 rounded-full shadow-lg hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-all duration-300 ease-in-out">
+                        글 삭제
+                    </Link>
+                    <Link href="/" className="bg-blue-400 text-white font-semibold px-5 py-2 rounded-full shadow-lg hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-all duration-300 ease-in-out">
+                        홈 화면
+                    </Link>
                 </div>
-                <p>{topic.content}</p>
-            </div>
-            <div className="mt-5">
-                <Link href="/" className="bg-blue-400 text-white font-semibold px-5 py-2 rounded-full shadow-lg hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-all duration-300 ease-in-out">
-                    홈 화면으로
-                </Link>
-            </div>
         </div>
     );
 }
