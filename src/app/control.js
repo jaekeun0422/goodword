@@ -24,7 +24,7 @@ export function Control() {
             .then((resp) => resp.json())
             .then((result) => {
                 console.log(result); // 응답 객체를 json 형태로 변환
-                setTopics(result);
+                setTopics(result.sort((a, b) => b.hit - a.hit)); //내림차순
                 //router.refresh(); // 있으면 결과가 표시되지 않음
             });
     };

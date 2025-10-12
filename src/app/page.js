@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import {Control} from "@/app/control"; // category별 조회
+import {Control} from "@/app/control";
+import {Logon} from "@/app/logon"; // log 번호 check
 
 export default async function Home() {
+  /* 시작 시 전체 읽는 것을 방지
   let topics = [];
   try {
     const resp = await fetch(process.env.NEXT_PUBLIC_API_URL+`goodword/getAll`);
@@ -11,6 +13,7 @@ export default async function Home() {
   } catch (e) {
     console.error("API fetch error:", e);
   }
+  */
   // morning.svg -> morning.jpg
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen">
@@ -22,7 +25,7 @@ export default async function Home() {
           height={50}
           priority
         />
-        <Control/>
+        <Logon/>
         <div className="hidden flex gap-4 items-center flex-col sm:flex-row">
           <a
             className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
@@ -48,6 +51,7 @@ export default async function Home() {
             Read our docs
           </a>
         </div>
+        {/* 시작 시 전체 읽는 것을 방지
         <div className="hidden row-start-3 flex gap-[24px] items-center justify-center">
           <ol>
             {topics.map((topic) => (
@@ -56,7 +60,8 @@ export default async function Home() {
                 </li>
             ))}
           </ol>
-        </div>
+        </div> */}
+
       </main>
       <footer className="hidden row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
