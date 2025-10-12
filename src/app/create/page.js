@@ -37,16 +37,16 @@ export default function Create() {
                     }
             }}>
                 <h1 className="text-3xl font-bold text-gray-800 mb-6 text-center">좋은 글 작성</h1>
-                
+
                 <div className="mb-4">
-                    <input 
-                        type="text" 
-                        name="category" 
+                    <input
+                        type="text"
+                        name="category"
                         placeholder="카테고리 (예: 건강, 노후, 경제, 인생, 관계)"
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 text-gray-800" 
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 text-gray-800"
                     />
                 </div>
-                
+
                 <div className="mb-4">
                     <input 
                         type="text" 
@@ -68,14 +68,14 @@ export default function Create() {
                 <div className="text-center">
                     <input 
                         type="submit" 
-                        value="좋은 글 등록"
+                        value="글 등록"
                         className="bg-blue-500 text-white font-bold px-8 py-3 rounded-full shadow-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75 transition-all duration-300 ease-in-out cursor-pointer"
                     />
                 </div>
             </form>
             <div className="mt-8">
                 <Link href="/" className="bg-gray-800 text-white font-bold px-7 py-3 rounded-full shadow-lg hover:bg-black focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-75 transition-all duration-300 ease-in-out">
-                    홈 화면으로
+                    홈 화면
                 </Link>
             </div>
         </div>
