@@ -12,6 +12,7 @@ export function Control() {
         e.preventDefault(); // submit 이벤트가 발생했을 때 페이지 리로드 방지
 
         let url = "";
+        setTopics([]);
         // category 상태의 값이 비어있지 않은지 직접 확인합니다.
         if (category && category.trim() !== '') {
             const params = new URLSearchParams({ category: category.trim() });
@@ -63,8 +64,11 @@ export function Control() {
             <div className="w-full max-w-4xl">
                 <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {topics.map((topic, index) => (
-                        <li key={`${topic.id}-${index}`} className="border rounded-lg p-4 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                        <li key={`${topic.id}-${index}`} className="border rounded-lg p-2 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                            {/*}
                             <Link href={`/read/${topic.id}`}>{topic.id} : {topic.hit} : {topic.category} : {topic.subject}</Link>
+                            */}
+                            <Link href={`/read/${topic.id}`}>({topic.hit}) {topic.subject}</Link>
                         </li>
                     ))}
                 </ol>
