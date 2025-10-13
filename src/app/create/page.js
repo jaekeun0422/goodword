@@ -2,18 +2,28 @@
 
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import {useState} from "react";
 
 export default function Create() {
     const router = useRouter();
+    const [category, setCategory] = useState('');
+    const [subject, setSubject] = useState('');
+    const [content, setContent] = useState('');
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
             <form 
                 className="w-full max-w-2xl bg-white p-8 border border-gray-200 shadow-lg rounded-xl" 
                 onSubmit={async (e) => {
                     e.preventDefault();
-                    const category = e.target.category.value;
-                    const subject = e.target.subject.value;
-                    const content = e.target.content.value;
+                    setCategory(e.target.category.value);
+                    setSubject(e.target.subject.value);
+                    setContent(e.target.content.value);
+                    if ((category === '' && category.trim() === '')
+                        || (subject === '' && subject.trim() === '')
+                        || (content === '' && content.trim() === '')) {
+                        alert("카테고리, 제목, 내용 전부 다 작성해주세요");
+                        return;
+                    }
                     const options = {
                         method: "POST",
                         headers: {
