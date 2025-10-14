@@ -2,7 +2,8 @@ import Link from "next/link";
 
 export default async function Read({params}) {
     const awaitedParams = await params;
-    const resp = await fetch(process.env.NEXT_PUBLIC_API_URL+`api/${awaitedParams.id}`);
+    //const resp = await fetch(process.env.NEXT_PUBLIC_API_URL+`api/${awaitedParams.id}`);
+    const resp = await fetch(`api/${awaitedParams.id}`);
     let topic = null;
     if (resp.ok) {
         topic = await resp.json(); // 데이터가 있을 때
@@ -17,7 +18,8 @@ export default async function Read({params}) {
             },
             body: JSON.stringify(topic)}
         try {
-            const resp = await fetch(process.env.NEXT_PUBLIC_API_URL + `api/update`, options);
+            //const resp = await fetch(process.env.NEXT_PUBLIC_API_URL + `api/update`, options);
+            const resp = await fetch(`api/update`, options);
             if (resp.ok) {
                 console.log("Post updated successfully!");
             } else {
