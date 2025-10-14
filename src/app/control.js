@@ -17,10 +17,10 @@ export function Control() {
         if (category && category.trim() !== '') {
             const params = new URLSearchParams({ category: category.trim() });
             //url = `${process.env.NEXT_PUBLIC_API_URL}api/findCategory1?${params.toString()}`;
-            url = `$api/findCategory1?${params.toString()}`;
+            url = `api/findCategory1?${params.toString()}`;
         } else {
             //url = `${process.env.NEXT_PUBLIC_API_URL}api/getAll`;
-            url = `$api/getAll`;
+            url = `api/getAll`;
         }
 
         fetch(url, { method: "GET" })
