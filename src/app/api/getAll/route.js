@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 export async function GET() {
     try {
-        const response = await fetch('http://www.yeoreka.com/goodword/api/getAll');
+        const response = await fetch('https://www.yeoreka.com/goodword/api/getAll');
 
         if (!response.ok) {
             throw new Error(`API 요청 실패: ${response.status}`);
@@ -17,4 +17,5 @@ export async function GET() {
             { status: 500 }
         );
     }
+
 }
