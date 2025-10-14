@@ -5,6 +5,7 @@ import {Logon} from "@/app/logon"; // log 번호 check
 
 export default async function Home() {
   /* 시작 시 전체 읽는 것을 방지 */
+  /*
   let topics = [];
   try {
     const resp = await fetch(process.env.NEXT_PUBLIC_API_URL+`api/getAll`);
@@ -14,6 +15,7 @@ export default async function Home() {
   } catch (e) {
     console.error("API fetch error:", e);
   }
+  */
 
   // morning.svg -> morning.jpg
   return (
