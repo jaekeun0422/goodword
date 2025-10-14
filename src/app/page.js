@@ -7,7 +7,7 @@ export default async function Home() {
   /* 시작 시 전체 읽는 것을 방지 */
   let topics = [];
   try {
-    const resp = await fetch(process.env.NEXT_PUBLIC_API_URL+`goodword/getAll`);
+    const resp = await fetch(process.env.NEXT_PUBLIC_API_URL+`api/getAll`);
     //const resp = await fetch("http://localhost:8080/goodword/getAll", { cache: "no-store" });
     topics = await resp.json();
     topics.sort((a, b) => b.hit - a.hit); //내림차순
