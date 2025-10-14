@@ -16,9 +16,11 @@ export function Control() {
         // category 상태의 값이 비어있지 않은지 직접 확인합니다.
         if (category && category.trim() !== '') {
             const params = new URLSearchParams({ category: category.trim() });
-            url = `${process.env.NEXT_PUBLIC_API_URL}api/findCategory1?${params.toString()}`;
+            //url = `${process.env.NEXT_PUBLIC_API_URL}api/findCategory1?${params.toString()}`;
+            url = `$api/findCategory1?${params.toString()}`;
         } else {
-            url = `${process.env.NEXT_PUBLIC_API_URL}api/getAll`;
+            //url = `${process.env.NEXT_PUBLIC_API_URL}api/getAll`;
+            url = `$api/getAll`;
         }
 
         fetch(url, { method: "GET" })
