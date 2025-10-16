@@ -8,15 +8,14 @@ export default async function Home() {
   /*
   let topics = [];
   try {
-    const resp = await fetch(process.env.NEXT_PUBLIC_API_URL+`api/getAll`);
-    //const resp = await fetch("http://localhost:8080/goodword/getAll", { cache: "no-store" });
+    const resp = await fetch(process.env.NEXT_PUBLIC_API_URL+`/api/getAll`);
+    //const resp = await fetch("http://localhost:8080/api/getAll", { cache: "no-store" });
     topics = await resp.json();
     topics.sort((a, b) => b.hit - a.hit); //내림차순
   } catch (e) {
     console.error("API fetch error:", e);
   }
   */
-
   // morning.svg -> morning.jpg
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen">
