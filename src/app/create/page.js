@@ -32,8 +32,7 @@ export default function Create() {
                         body: JSON.stringify({ category, subject, content, hit: 1 })
                     };
                     try {
-                        //const resp = await fetch(process.env.NEXT_PUBLIC_API_URL + `api/register`, options);
-                        const resp = await fetch(`api/register`, options);
+                        const resp = await fetch(process.env.NEXT_PUBLIC_API_URL + `/api/register`, options);
                         if (resp.ok) {
                             console.log("Post created successfully!");
                             e.target.reset(); // 폼의 모든 필드를 초기화합니다.
