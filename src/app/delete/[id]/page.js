@@ -4,8 +4,7 @@ export default async function Delete({params}) {
     const awaitedParams = await params;
     const id = awaitedParams.id;
     console.log("delete parameter(id) = "+id);
-    //const resp = await fetch(process.env.NEXT_PUBLIC_API_URL+`api/delete/${id}`, {method: "POST"});
-    const resp = await fetch(`api/delete/${id}`, {method: "POST"});
+    const resp = await fetch(process.env.NEXT_PUBLIC_API_URL+`/api/delete/${id}`, {method: "POST"});
     if (resp.ok) {
         console.log(resp);
     } else {
