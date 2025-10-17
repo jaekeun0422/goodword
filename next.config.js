@@ -5,11 +5,12 @@ const nextConfig = {
     async rewrites() {
         return [
             {
-                source: "/api/getAll",
+                source: "/yeoga/goodword/api/getAll",
                 destination: `${process.env.NEXT_PUBLIC_API_URL}/api/getAll`,
             },
         ];
     },
 };
+
 
 module.exports = nextConfig;
