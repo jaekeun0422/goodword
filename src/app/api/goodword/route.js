@@ -1,26 +1,45 @@
 export async function GET() {
     try {
-        const response = await fetch('http://www.yeoreka.com/goodword/api/getAll', {
-            // Node.js 환경에서는 HTTP 요청 가능
-            cache: 'no-store', // 또는 'force-cache', 'revalidate' 등
+        const apiUrl = 'http://www.yeoreka.com/goodword/api/getAll';
+
+        console.log('Fetching from:', apiUrl);
+
+        const response = await fetch(apiUrl, {
+            cache: 'no-store',
+            headers: {
+                'User-Agent': 'Mozilla/5.0',
+            },
         });
 
+        console.log('Response status:', response.status);
+        console.log('Response headers:', Object.fromEntries(response.headers));
+
         if (!response.ok) {
-            throw new Error(`API responded with status: ${response.status}`);
+            const errorText = await response.text();
+            console.error('Error response:', errorText);
+
+            return Response.json(
+                {
+                    error: 'API Error',
+                    status: response.status,
+                    statusText: response.statusText,
+                    body: errorText
+                },
+                { status: response.status }
+            );
         }
 
         const data = await response.json();
+        return Response.json(data);
 
-        return Response.json(data, {
-            status: 200,
-            headers: {
-                'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400',
-            },
-        });
     } catch (error) {
-        console.error('API Proxy Error:', error);
+        console.error('Fetch error:', error);
         return Response.json(
-            { error: 'Failed to fetch data', message: error.message },
+            {
+                error: 'Failed to fetch data',
+                message: error.message,
+                stack: error.stack
+            },
             { status: 500 }
         );
     }
