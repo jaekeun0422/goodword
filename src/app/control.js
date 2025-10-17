@@ -18,7 +18,7 @@ export function Control() {
             const params = new URLSearchParams({ category: category.trim() });
             url = `${process.env.NEXT_PUBLIC_API_URL}/api/findCategory1?${params.toString()}`;
         } else {
-            url = `/yeoga/goodword`;
+            url = `yeoga/goodword/api/getAlld`;
         }
 
         fetch(url, { method: "GET" })
