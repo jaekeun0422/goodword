@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+export const runtime = 'edge';
+
 export default async function Read({params}) {
     const awaitedParams = await params;
     const resp = await fetch(process.env.NEXT_PUBLIC_API_URL+`/api/${awaitedParams.id}`);
@@ -78,4 +80,5 @@ export default async function Read({params}) {
                 </div>
         </div>
     );
+
 }
