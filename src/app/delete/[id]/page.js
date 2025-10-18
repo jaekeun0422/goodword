@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+export const runtime = 'edge';
+
 export default async function Delete({params}) {
     const awaitedParams = await params;
     const id = awaitedParams.id;
@@ -29,4 +31,5 @@ export default async function Delete({params}) {
             </div>
         </div>
     );
+
 }
