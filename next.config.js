@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
@@ -10,6 +11,8 @@ module.exports = nextConfig
 
 
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
 /** @type {import('next').NextConfig} */
 
@@ -38,4 +41,7 @@ module.exports = nextConfig
 
 
 >>>>>>> afa3554ad93ba18f396aa873c9ebb2ad705c9b4f
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

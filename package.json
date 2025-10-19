@@ -1,5 +1,8 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
 {
   "name": "front",
@@ -24,6 +27,9 @@
     "@eslint/eslintrc": "^3"
   }
 }
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 {
@@ -52,6 +58,10 @@
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+>>>>>>> afa3554ad93ba18f396aa873c9ebb2ad705c9b4f
+>>>>>>> Stashed changes
 =======
 >>>>>>> afa3554ad93ba18f396aa873c9ebb2ad705c9b4f
 >>>>>>> Stashed changes

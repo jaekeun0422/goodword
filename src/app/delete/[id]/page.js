@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 import Link from "next/link";
 
 export const runtime = 'edge';
@@ -56,6 +57,8 @@ export default async function Delete({params}) {
         );
     }
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
 import Link from "next/link";
 
@@ -171,5 +174,8 @@ export default async function Delete({params}) {
         );
     }
 >>>>>>> afa3554ad93ba18f396aa873c9ebb2ad705c9b4f
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }
