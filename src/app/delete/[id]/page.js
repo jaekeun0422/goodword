@@ -7,15 +7,29 @@ export default async function Delete({params}) {
     const id = awaitedParams.id;
     console.log("delete parameter(id) = "+id);
     try {
-        const resp = await fetch(process.env.NEXT_PUBLIC_API_URL+`/api/delete/${id}`, {method: "POST"});
+        const resp = await fetch(process.env.NEXT_PUBLIC_API_URL+`/api/delete/${id}`, {method: "DELETE"});
         if (resp.ok) {
             console.log(resp);
         } else {
             // 에러 처리: 데이터가 없을 때
+            console.error(`해당 {awaitedParams.id}(이)가 없습니다`, error);
             return (
-                <>
-                    <h2>Not found ID No. {awaitedParams.id}</h2>
-                </>
+            <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen">
+                <div className="flex flex-col gap-8 row-start-2 items-center">
+                    <div className="text-center p-8 border border-red-300 bg-red-50 shadow-lg rounded-lg">
+                        <h2 className="text-red-600 text-xl font-bold">
+                            좋은 글 ID No. {awaitedParams.id}(이)가 없습니다
+                        </h2>
+                        <p className="text-gray-600 mt-2">{error.message}</p>
+                    </div>
+                    <Link
+                        href="/"
+                        className="bg-gray-800 text-white font-bold px-7 py-3 rounded-full shadow-lg hover:bg-black focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-75 transition-all duration-300 ease-in-out">
+                        홈 화면
+                    </Link>
+                </div>
+            </div>
+
             );
         }
         console.log("Delete successful:", resp);

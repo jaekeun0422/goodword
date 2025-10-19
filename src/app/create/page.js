@@ -9,6 +9,7 @@ export default function Create() {
     const [category, setCategory] = useState('');
     const [subject, setSubject] = useState('');
     const [content, setContent] = useState('');
+
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
             <form 
@@ -18,6 +19,7 @@ export default function Create() {
                     setCategory(e.target.category.value);
                     setSubject(e.target.subject.value);
                     setContent(e.target.content.value);
+                    console.log(`분류: ${category} \n제목: ${subject} \n내용: ${content}`);
                     if ((category === '' && category.trim() === '')
                         || (subject === '' && subject.trim() === '')
                         || (content === '' && content.trim() === '')) {
@@ -52,7 +54,9 @@ export default function Create() {
                     <input
                         type="text"
                         name="category"
-                        placeholder="카테고리 (예: 건강, 노후, 경제, 인생, 관계)"
+                        value={category}
+                        onChange={(e) => setCategory(e.target.value)}
+                        placeholder="카테고리 (예: 건강, 노후, 경제, 인생, 관계, 감사)"
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 text-gray-800"
                     />
                 </div>
@@ -60,7 +64,9 @@ export default function Create() {
                 <div className="mb-4">
                     <input 
                         type="text" 
-                        name="subject" 
+                        name="subject"
+                        value={subject}
+                        onChange={(e) => setSubject(e.target.value)}
                         placeholder="제목을 입력하세요" 
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 text-gray-800" 
                     />
@@ -70,7 +76,9 @@ export default function Create() {
                     <textarea 
                         name="content" 
                         placeholder="내용을 입력하세요" 
-                        rows="10"
+                        rows={10}
+                        value={content}
+                        onChange={(e) => setContent(e.target.value)}
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 text-gray-800"
                     ></textarea>
                 </div>

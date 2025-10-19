@@ -40,7 +40,7 @@ export function Control() {
                 <input
                     type="text"
                     name="category"
-                    placeholder="건강 노후 경제 인생 관계"
+                    placeholder="건강 노후 경제 인생 관계 감사"
                     value={category}
                     onChange={e => setCategory(e.target.value)}
                     className="peer w-full h-full bg-transparent pl-5 pr-2 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-yellow-300 placeholder-blue-500 dark:placeholder-gray-400 focus:outline-none "
