@@ -1,6 +1,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 'use client';
 
 import { useState } from 'react';
@@ -75,6 +76,8 @@ export default function DeleteConfirm({ params }) {
         </div>
     );
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -230,6 +233,9 @@ export default function DeleteConfirm({ params }) {
 >>>>>>> afa3554ad93ba18f396aa873c9ebb2ad705c9b4f
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes

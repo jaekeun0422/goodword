@@ -1,6 +1,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 import Image from "next/image";
 import Link from "next/link";
 import {Control} from "@/app/control";
@@ -126,6 +127,8 @@ export default async function Home() {
   );
 }
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -383,6 +386,9 @@ export default async function Home() {
 >>>>>>> afa3554ad93ba18f396aa873c9ebb2ad705c9b4f
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
