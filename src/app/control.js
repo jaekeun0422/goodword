@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from 'react';
 import Link from "next/link";
+import Image from "next/image";
 
 export function Control() {
     const [category, setCategory] = useState('');
@@ -62,13 +63,71 @@ export function Control() {
                 </button>
             </form>
             <div className="w-full max-w-4xl">
-                <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="flex flex-row gap-4 items-center justify-center mt-2">
+                    <Image
+                        src="/star_yellow.png"
+                        alt="hit > 100"
+                        width={20}
+                        height={20}
+                        priority
+                        style={{ display: 'inline', marginRight: '2px' }}
+                    />
+                    <p>100이상</p>
+                    <Image
+                        src="/star_blue.png"
+                        alt="hit > 50"
+                        width={20}
+                        height={20}
+                        priority
+                        style={{ display: 'inline', marginRight: '2px' }}
+                    />
+                    <p>50이상</p>
+                    <Image
+                        src="/star_green.png"
+                        alt="hit > 10"
+                        width={20}
+                        height={20}
+                        priority
+                        style={{ display: 'inline', marginRight: '2px' }}
+                    />
+                    <p>10이상</p>
+                </div>
+                <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
                     {topics.map((topic, index) => (
                         <li key={`${topic.id}-${index}`} className="border rounded-lg p-2 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
-                            {/*}
-                            <Link href={`/read/${topic.id}`}>{topic.id} : {topic.hit} : {topic.category} : {topic.subject}</Link>
-                            */}
-                            <Link href={`/read/${topic.id}`}>({topic.hit}) {topic.subject}</Link>
+                            <Link href={`/read/${topic.id}`}>
+                                {topic.hit > 50 && (
+                                    <Image
+                                        src="/star_yellow.png"
+                                        alt="hit > 10"
+                                        width={20}
+                                        height={20}
+                                        priority
+                                        style={{ display: 'inline', marginRight: '4px' }}
+                                    />
+                                )}
+                                {topic.hit > 25 && topic.hit <= 50 && (
+                                    <Image
+                                        src="/star_blue.png"
+                                        alt="hit > 10"
+                                        width={20}
+                                        height={20}
+                                        priority
+                                        style={{ display: 'inline', marginRight: '4px' }}
+                                    />
+                                )}
+                                {topic.hit > 10 && topic.hit <= 25 && (
+                                    <Image
+                                        src="/star_green.png"
+                                        alt="hit > 10"
+                                        width={20}
+                                        height={20}
+                                        priority
+                                        style={{ display: 'inline', marginRight: '4px' }}
+                                    />
+                                )}
+                                {topic.hit > 10 ? topic.subject : `(${topic.hit}) ${topic.subject}`}
+                            </Link>
                         </li>
                     ))}
                 </ol>
